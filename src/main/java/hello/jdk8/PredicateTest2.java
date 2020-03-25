@@ -5,7 +5,9 @@ import com.google.common.collect.Lists;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 /**
  * @Description TODO
@@ -16,6 +18,19 @@ public class PredicateTest2 {
     public static void main(String[] args) {
         ArrayList<Integer> list =
                 Lists.newArrayList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        List<Integer> collect = list.stream().filter(item -> {
+            //// TODO: 2020/3/20 sou
+            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXX");
+            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXX");
+            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXX");
+            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXX");
+            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXX");
+            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXX");
+            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXX");
+            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXX");
+           return item > 5;
+        }).collect(Collectors.toList());
+        collect.forEach(item-> System.out.println(item));
         PredicateTest2 test = new PredicateTest2();
 //        test.conditionFilter(list, item -> item % 2 == 0);
 //        System.out.println("==============");
@@ -30,8 +45,7 @@ public class PredicateTest2 {
 //        test.conditionFilter(list, item -> false);
 //        test.conditionFilter2(list, integer -> integer > 5,
 //                integer -> integer % 2 == 0);
-        System.out.println(test.isEqual(new Date()).test(new Date()));
-
+//         System.out.println(test.isEqual(new Date()).test(new Date()));
 
 
     }
@@ -45,9 +59,7 @@ public class PredicateTest2 {
 
     }
 
-    public void conditionFilter2(List<Integer> list,
-                                 Predicate<Integer> predicate1,
-                                 Predicate<Integer> predicate2) {
+    public void conditionFilter2(List<Integer> list, Predicate<Integer> predicate1, Predicate<Integer> predicate2) {
         for (Integer integer : list) {
             if (predicate1.and(predicate2).negate().test(integer)) {
                 System.out.println(integer);
@@ -56,7 +68,7 @@ public class PredicateTest2 {
 
     }
 
-    public Predicate<Date> isEqual(Object object){
+    public Predicate<Date> isEqual(Object object) {
         return Predicate.isEqual(object);
 
     }
