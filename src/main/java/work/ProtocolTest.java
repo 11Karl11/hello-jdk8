@@ -14,14 +14,14 @@ import java.net.Socket;
 public class ProtocolTest {
 
     public static void main(String[] args) throws IOException {
-        Integer size = 1;
+        Integer size = 3;
         // 1.进行循环遍历.获取所有文件
-        for (int i = 1; i <= size; i++) {
+        for (int i = 1; i <= 3; i++) {
             String s = readToMultipart(new File("D:\\data\\file\\gpxx\\" + i +".txt"));
             if(s != null){
                 String[] split = s.split(";");
-                String host_dev = "127.0.0.1";
-                send(host_dev,10500,split,10);
+                String host_dev = "192.168.0.114";
+                send(host_dev,10452,split,1000);
             }
         }
     }
@@ -66,6 +66,7 @@ public class ProtocolTest {
                     log.error("发送：" + s1);
                     Thread.sleep(millis);
                     os.write(cmdInfor2);
+                    os.flush();
                 }
             }
 
@@ -83,12 +84,12 @@ public class ProtocolTest {
 
     /** 将十六进制的字符串转换成字节数组 */
     public static byte[] hexStrToBinaryStr(String hexString) {
-        if (StringUtils.isEmpty(hexString) || !hexString.contains("- [01")) {
+        if (StringUtils.isEmpty(hexString) || !hexString.contains("01")) {
             return null;
         }
-
-        String removeChars = "receive protocol - [";
-        hexString = hexString.substring(hexString.indexOf(removeChars) + removeChars.length(), hexString.length());
+        //
+        // String removeChars = "receive protocol - [";
+        // hexString = hexString.substring(hexString.indexOf(removeChars) + removeChars.length(), hexString.length());
 
         hexString = hexString.replaceAll(" ", "");
         hexString = hexString.replaceAll("\n", "");
