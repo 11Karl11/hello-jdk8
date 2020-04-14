@@ -14,5 +14,9 @@ public class StreamTest3 {
         ArrayList<String> list = Lists.newArrayList("hello", "world", "hello world");
         list.forEach(System.out::println);
         list.stream().forEach(i-> System.out.println(i));
+
+        System.out.println("-------------");
+        list.stream().forEach(System.out::println);//流相关的内部迭代
+        list.forEach(System.out::println);//和流没有关系的
     }
 }
