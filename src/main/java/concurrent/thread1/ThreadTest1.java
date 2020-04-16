@@ -1,4 +1,4 @@
-package concurrent;
+package concurrent.thread1;
 
 /**
  * @author karl xie

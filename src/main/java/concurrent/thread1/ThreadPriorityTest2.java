@@ -1,4 +1,4 @@
-package concurrent;
+package concurrent.thread1;
 
 /**
  * Java提供⼀个线程调度器来监视和控制处于RUNNABLE状态的线程。线程的调度 策略采⽤抢占式，优先级⾼的线程⽐优先级低的线程会有更⼤的⼏率优先执⾏。
@@ -21,10 +21,10 @@ public class ThreadPriorityTest2 {
         ThreadGroup threadGroup = new ThreadGroup("t1");
         threadGroup.setMaxPriority(6);
 
-        Thread thread1 = new Thread(threadGroup, "thread1");
+        Thread thread1 = new Thread(threadGroup, "concurrent/thread1");
         thread1.setPriority(9);
         Thread thread2 = new Thread(() -> {
-        }, "thread2");
+        }, "concurrent/thread2");
         thread2.setPriority(8);
         System.out.println("线程组的优先级:" + threadGroup.getMaxPriority());
         System.out.println("线程1的优先级:" + thread1.getPriority() + "所属线程组" + thread1.getThreadGroup().getName());

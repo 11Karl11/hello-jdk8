@@ -1,4 +1,4 @@
-package concurrent;
+package concurrent.thread1;
 
 /**
  * Java中⽤ThreadGroup来表示线程组，我们可以使⽤线程组对线程进⾏批量控制。
