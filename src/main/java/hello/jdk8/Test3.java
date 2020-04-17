@@ -28,9 +28,9 @@ public class Test3 {
         List<String> list2 = Lists.newArrayList();
 //        list.forEach((item)->list2.add(item.toUpperCase()));
 //        list2.forEach(item-> System.out.println(item));
-//        list.stream().map(item -> item.toUpperCase())
+//        list.hello.stream().map(item -> item.toUpperCase())
 //                  .forEach(item-> System.out.println(item));
-//        list.stream().map(String::toUpperCase).forEach(item-> System.out.println(item));
+//        list.hello.stream().map(String::toUpperCase).forEach(item-> System.out.println(item));
 //        Function<String ,String> function=String::toUpperCase;
 //        System.out.println(function.getClass().getInterfaces()[0]);
 

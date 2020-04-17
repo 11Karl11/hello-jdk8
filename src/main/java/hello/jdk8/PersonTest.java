@@ -24,10 +24,10 @@ public class PersonTest {
 //        List<Person> personByAge = personTest.getPersonByAge(20, persons);
 //        personByAge.forEach(person -> System.out.println(person.getAge()));
 //        List<Person> result=personTest.getPersonAge2(20,persons,
-//                (age,personList)->personList.stream().filter(
+//                (age,personList)->personList.hello.stream().filter(
 //                        person -> person.getAge()>age
 //                ).collect(Collectors.toList()));
-//        result.stream().forEach(person -> System.out.println(person.getAge()));
+//        result.hello.stream().forEach(person -> System.out.println(person.getAge()));
 
         List<Person> result=personTest.getPersonAge2(20,persons,
                 (age,personList)->personList.stream().filter(
