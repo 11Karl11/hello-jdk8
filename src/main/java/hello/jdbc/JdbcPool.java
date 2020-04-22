@@ -56,7 +56,7 @@ public class JdbcPool {
     {
         try {
             //加载mysql的jdbc驱动类
-            Class.forName(DRIVER_CLASS_NAME);
+           //Class.forName(DRIVER_CLASS_NAME);
             //初始化承载连接的容器
             jdbcConnectPool = new CopyOnWriteArrayList();
             //以初始化连接数量生成对应数量的jdbc连接且放入jdbcConnectPool中
@@ -108,7 +108,7 @@ public class JdbcPool {
     public synchronized void releaseJdbcConnection(ResultSet resultSet, Statement statement, Connection connection) {
         releaseJdbcStatementAndResultSet(resultSet, statement);
         //如果当前连接数小于最大连接数，则把数据库连接重新放置到数据库连接池中
-        if (CURR_USED_LINK_NUM.get() > 0 && getCurrConnectionNum() < MAX_LINK_NUM) {
+        if (CURR_USED_LINK_NUM.get() > 0 && getAllConnectionNum() < MAX_LINK_NUM) {
             jdbcConnectPool.add(connection);
             CURR_USED_LINK_NUM.getAndDecrement();
         }
