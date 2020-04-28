@@ -16,7 +16,7 @@ public class Student {
     private String name;
     private int score;
 
-    public static int compareStudentBySocre(Student student1, Student student2) {
+    public static int compareStudentByScore(Student student1, Student student2) {
         return student1.getScore()-student2.getScore();
     }
     public static int compareStudentByName(Student student1,Student student2){

@@ -14,7 +14,7 @@ public class CallableTest1 implements Callable<Integer> {
         return 2;
     }
 
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
+    public static void main(String[] args) throws Exception {
         CallableTest1 callableTest1 = new CallableTest1();
         ExecutorService executorService = Executors.newCachedThreadPool();
         Future<Integer> future = executorService.submit(callableTest1);
