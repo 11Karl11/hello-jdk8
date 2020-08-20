@@ -30,9 +30,14 @@ public class StreamTest13 {
 //                )
 //        ));
         //分区,只有两组true/false
-        Map<Boolean, List<Student>> map = students.stream().collect(Collectors.partitioningBy(
-                student -> student.getScore() >= 90
-        ));
+        // Map<Boolean, List<Student>> map = students.stream().collect(Collectors.partitioningBy(
+        //         student -> student.getScore() >= 90
+        // ));
+
+        //Duplicate key  key值一样会报错
+        // Map<Integer, Student> map = students.stream().collect(Collectors.toMap(Student::getAge, r -> r));
+
+        Map<Integer, Student> map = students.stream().collect(Collectors.toMap(Student::getAge, r -> r,(r1,r2)->r1));
         System.out.println(map);
 
     }
