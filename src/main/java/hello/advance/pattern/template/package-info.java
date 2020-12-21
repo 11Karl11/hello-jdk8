@@ -1,4 +1,5 @@
-package hello.advance.pattern.strategy;
+package hello.advance.pattern.template;
+
 /**
  * 模板模式一般只针对一套算法，注重对同一个算法的不同细节进行抽象提供不同的实现。而策略模式注重多套算法多套实现，在算法中间不应该有交集，
  * 因此算法和算法只间一般不会有冗余代码！因为不同算法只间的实现一般不同很相近。
@@ -10,4 +11,4 @@ package hello.advance.pattern.strategy;
  *
  * 策略模式关注多种算法，模板模式关注一种算法。策略模式不同策略只间代码很少冗余。
  *
-*/
+ */
