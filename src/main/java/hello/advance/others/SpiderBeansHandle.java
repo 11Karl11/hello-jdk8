@@ -1,4 +1,4 @@
-package hello.advance;
+package hello.advance.others;
 
 import com.google.common.collect.Lists;
 

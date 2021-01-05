@@ -1,4 +1,4 @@
-package hello.advance;
+package hello.advance.others;
 
 /**
  * @author karl xie
