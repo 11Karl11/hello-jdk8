@@ -2,7 +2,6 @@ package hello.advance.pattern.template.first;
 
 /**
  * @author karl xie
- * Created on 2020-12-21 17:01
  */
 public class BaoCai extends TemplateClass {
 

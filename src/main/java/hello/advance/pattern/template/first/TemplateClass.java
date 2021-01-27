@@ -2,7 +2,6 @@ package hello.advance.pattern.template.first;
 
 /**
  * @author karl xie
- * Created on 2020-12-21 16:58
  */
 public abstract class TemplateClass {
 

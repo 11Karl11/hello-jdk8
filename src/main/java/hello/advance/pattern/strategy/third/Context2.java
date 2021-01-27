@@ -3,7 +3,6 @@ package hello.advance.pattern.strategy.third;
 /**
  * 策略模式与简单工厂结合
  * @author karl xie
- * Created on 2020-12-14 19:49
  */
 public class Context2 {
 

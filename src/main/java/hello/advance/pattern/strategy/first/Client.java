@@ -2,7 +2,6 @@ package hello.advance.pattern.strategy.first;
 
 /**
  * @author karl xie
- * Created on 2020-12-14 19:24
  */
 public class Client {
 

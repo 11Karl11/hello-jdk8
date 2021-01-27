@@ -5,7 +5,6 @@ package hello.advance.pattern.strategy.third;
  * 优点：1.上下文和具体策略是松耦合关系。因此上下文只知道它要使用某一个实现Strategy接口类的实例，但不需要知道具体是哪一个类。
  *      2.策略模式满足“开-闭原则”。当增加新的具体策略时，不需要修改上下文类的代码，上下文就可以引用新的具体策略的实例。
  * @author karl xie
- * Created on 2020-12-14 19:50
  */
 public class Test2 {
 

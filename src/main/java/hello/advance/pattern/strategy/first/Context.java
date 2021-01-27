@@ -4,7 +4,6 @@ package hello.advance.pattern.strategy.first;
  * 负责和具体的策略类交互
  *
  * @author karl xie
- * Created on 2020-12-14 19:23
  */
 public class Context {
 

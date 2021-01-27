@@ -2,7 +2,6 @@ package hello.advance.pattern.template.second;
 
 /**
  * @author karl xie
- * Created on 2020-12-21 17:23
  */
 public interface SSOContextAnalysis {
 

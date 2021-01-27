@@ -2,7 +2,6 @@ package hello.advance.pattern.strategy.first;
 
 /**
  * @author karl xie
- * Created on 2020-12-14 19:22
  */
 public class MinusStrategy implements Strategy {
     @Override

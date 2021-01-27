@@ -4,7 +4,6 @@ import hello.utils.CodeUtils;
 
 /**
  * @author karl xie
- * Created on 2020-12-21 17:01
  */
 public class Test {
 

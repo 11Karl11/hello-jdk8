@@ -8,7 +8,6 @@ package hello.advance.pattern.template.second;
  * 数据库配置 + 反射（可以使用CGLIB代理）
  * 数据库配置 + 预先加载所有实现类，根据配置动态选择
  * @author karl xie
- * Created on 2020-12-21 17:25
  */
 public class Test {
     public static void main(String[] args) {
