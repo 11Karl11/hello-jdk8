@@ -3,7 +3,7 @@ package hello.advance.pattern.strategy.first;
 /**
  * @author karl xie
  */
-public class Client {
+public class Client { 
 
     public static void main(String[] args) {
         new Context(new SumStrategy()).result(20, 10);
