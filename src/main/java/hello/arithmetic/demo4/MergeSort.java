@@ -20,6 +20,7 @@ public class MergeSort {
 			//处理右边
 			mergeSort(arr, middle+1, high);
 			//归并
+			System.out.println(low+":"+middle+":"+high);
 			merge(arr,low,middle,high);
 		}
 	}
