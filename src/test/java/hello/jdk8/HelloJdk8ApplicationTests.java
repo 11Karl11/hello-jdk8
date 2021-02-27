@@ -27,8 +27,8 @@ class HelloJdk8ApplicationTests {
         //数据源
         HikariConfig hikariConfig = new HikariConfig();
         hikariConfig.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        hikariConfig.setJdbcUrl("jdbc:mysql://192.168.0.104:3306/tenant");
-        hikariConfig.setUsername("ruhr");
+        hikariConfig.setJdbcUrl("jdbc:mysql://192.168.0.104:3307/ruhr_cloud");
+        hikariConfig.setUsername("ruhr_new");
         hikariConfig.setPassword("RUHR@007mysql");
         //设置可以获取tables remarks信息
         hikariConfig.addDataSourceProperty("useInformationSchema", "true");
