@@ -24,6 +24,8 @@ public class AliaPayHandler extends PayHandler {
 
     @Override
     public boolean pay2(String code) {
+
+
         if ("alia".equals(code)) {
             System.out.println("===发起支付宝支付===");
             return true;
