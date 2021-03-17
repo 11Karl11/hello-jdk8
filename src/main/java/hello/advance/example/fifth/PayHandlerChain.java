@@ -31,18 +31,18 @@ public class PayHandlerChain implements ApplicationContextAware, InitializingBea
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        Map<String, PayHandler> beansOfTypeMap = applicationContext.getBeansOfType(PayHandler.class);
-        if (beansOfTypeMap == null || beansOfTypeMap.size() == 0) {
-            return;
-        }
-        List<PayHandler> handlers = beansOfTypeMap.values().stream()
-                .sorted(((o1, o2) -> o2.priority - o1.priority)).collect(Collectors.toList());
-        for (int i = 0; i < handlers.size(); i++) {
-            PayHandler payHandler = handlers.get(i);
-            if (i != handlers.size() - 1) {
-                payHandler.setNext(handlers.get(i + 1));
-            }
-        }
-        header = handlers.get(0);
+        // Map<String, PayHandler> beansOfTypeMap = applicationContext.getBeansOfType(PayHandler.class);
+        // if (beansOfTypeMap == null || beansOfTypeMap.size() == 0) {
+        //     return;
+        // }
+        // List<PayHandler> handlers = beansOfTypeMap.values().stream()
+        //         .sorted(((o1, o2) -> o2.priority - o1.priority)).collect(Collectors.toList());
+        // for (int i = 0; i < handlers.size(); i++) {
+        //     PayHandler payHandler = handlers.get(i);
+        //     if (i != handlers.size() - 1) {
+        //         payHandler.setNext(handlers.get(i + 1));
+        //     }
+        // }
+        // header = handlers.get(0);
     }
 }

@@ -12,6 +12,7 @@ public class AliaPayHandler extends PayHandler {
         super.priority = 2;
     }
 
+
     @Override
     public void pay(String code) {
         if ("alia".equals(code)) {
@@ -19,6 +20,15 @@ public class AliaPayHandler extends PayHandler {
         } else {
             getNext().pay(code);
         }
+    }
+
+    @Override
+    public boolean pay2(String code) {
+        if ("alia".equals(code)) {
+            System.out.println("===发起支付宝支付===");
+            return true;
+        }
+        return false;
     }
 
 }

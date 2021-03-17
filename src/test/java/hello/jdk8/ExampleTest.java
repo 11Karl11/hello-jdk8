@@ -1,10 +1,12 @@
 package hello.jdk8;
 
 import hello.advance.example.fifth.PayHandlerChain;
+import hello.advance.example.fifth.PayHandlerChain2;
 import hello.advance.example.first.PayService1;
 import hello.advance.example.fourth.PayService4;
 import hello.advance.example.second.PayService2;
 import hello.advance.example.third.PayService3;
+import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -31,6 +33,9 @@ public class ExampleTest {
     @Autowired
     private PayHandlerChain payHandlerChain;
 
+    @Autowired
+    private PayHandlerChain2 payHandlerChain2;
+
     @Test
     public void first() {
         payService1.pay("alia");
@@ -54,6 +59,12 @@ public class ExampleTest {
     @Test
     public void fifth() {
         payHandlerChain.handlePay("jingdong");
+    }
+
+
+    @Test
+    public void fifth2() {
+        payHandlerChain2.handlePay("one","jingdong", Lists.newArrayList("aliaPayHandler","weixinPayHandler","jingdongPayHandler","weixinPayHandler"));
     }
 
     @Test

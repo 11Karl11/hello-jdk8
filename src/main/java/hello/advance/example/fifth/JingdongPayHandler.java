@@ -21,4 +21,13 @@ public class JingdongPayHandler extends PayHandler{
         }
     }
 
+    @Override
+    public boolean pay2(String code) {
+        if ("jingdong".equals(code)) {
+            System.out.println("===发起京东支付===");
+            return true;
+        }
+        return false;
+    }
+
 }

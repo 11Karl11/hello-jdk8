@@ -6,7 +6,7 @@ package hello.advance.pattern.chain.first;
 public class Test {
     public static void main(String[] args){
         LoggerInterface log = new InfoLogger();
-        log.write(LoggerEnums.DEBUG.getValue(), "test the debug message");
+        log.write(LoggerEnums.ERROR.getValue(), "test the debug message");
     }
 
 }
