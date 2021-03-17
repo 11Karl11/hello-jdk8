@@ -14,7 +14,9 @@ import java.net.Socket;
 public class ProtocolTest {
 
     public static void main(String[] args) throws IOException {
+
         Integer size = 6;
+
         // 1.进行循环遍历.获取所有文件
         for (int i = 1; i <= size; i++) {
             String s = readToMultipart(new File("D:\\data\\file\\gpxx\\" + i +".txt"));
