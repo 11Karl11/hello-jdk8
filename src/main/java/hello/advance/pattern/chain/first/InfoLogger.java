@@ -4,7 +4,6 @@ package hello.advance.pattern.chain.first;
 
 /**
  * @author karl xie
- * Created on 2021-01-05 21:10
  */
 public class InfoLogger implements LoggerInterface {
 

@@ -8,6 +8,8 @@ import lombok.Setter;
  */
 public abstract class PayHandler {
 
+    protected Integer priority;
+
     @Getter
     @Setter
     protected PayHandler next;

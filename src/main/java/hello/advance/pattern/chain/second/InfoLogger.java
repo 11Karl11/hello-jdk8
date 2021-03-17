@@ -2,7 +2,6 @@ package hello.advance.pattern.chain.second;
 
 /**
  * @author karl xie
- * Created on 2021-01-05 21:22
  */
 public class InfoLogger extends AbstractLogger{
 

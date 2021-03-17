@@ -35,7 +35,8 @@ public class PayHandlerChain implements ApplicationContextAware, InitializingBea
         if (beansOfTypeMap == null || beansOfTypeMap.size() == 0) {
             return;
         }
-        List<PayHandler> handlers = beansOfTypeMap.values().stream().collect(Collectors.toList());
+        List<PayHandler> handlers = beansOfTypeMap.values().stream()
+                .sorted(((o1, o2) -> o2.priority - o1.priority)).collect(Collectors.toList());
         for (int i = 0; i < handlers.size(); i++) {
             PayHandler payHandler = handlers.get(i);
             if (i != handlers.size() - 1) {

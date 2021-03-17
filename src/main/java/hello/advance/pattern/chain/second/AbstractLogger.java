@@ -2,7 +2,6 @@ package hello.advance.pattern.chain.second;
 
 /**
  * @author karl xie
- * Created on 2021-01-05 21:20
  */
 public abstract class AbstractLogger {
 
@@ -22,7 +21,7 @@ public abstract class AbstractLogger {
 
     // 记录日志
     public void logMessage(int level, String message){
-        if(this.level <= level){
+        if(this.level == level){
             write(message);
         }
 

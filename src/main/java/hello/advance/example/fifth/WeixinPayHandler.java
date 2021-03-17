@@ -8,6 +8,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class WeixinPayHandler extends PayHandler{
 
+    {
+        super.priority = 3;
+    }
+
     @Override
     public void pay(String code) {
         if ("weixin".equals(code)) {

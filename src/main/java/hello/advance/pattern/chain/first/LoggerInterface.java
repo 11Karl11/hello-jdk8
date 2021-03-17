@@ -2,7 +2,6 @@ package hello.advance.pattern.chain.first;
 
 /**
  * @author karl xie
- * Created on 2021-01-05 21:07
  */
 public interface LoggerInterface {
 
