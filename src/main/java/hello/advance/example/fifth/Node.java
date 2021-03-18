@@ -12,7 +12,7 @@ public class Node {
 		this.payHandler = data;
 	}
 
-	//为节点追回节点
+	//为节点追加节点
 	public Node append(Node node) {
 		//当前节点
 		Node currentNode = this;
