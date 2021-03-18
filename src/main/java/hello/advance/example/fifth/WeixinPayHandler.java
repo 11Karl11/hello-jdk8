@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 /**
  * @author karl xie
  */
-@Service
+@Service("w")
 public class WeixinPayHandler extends PayHandler{
 
     {

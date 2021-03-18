@@ -64,7 +64,7 @@ public class ExampleTest {
 
     @Test
     public void fifth2() {
-        payHandlerChain2.handlePay("one","jingdong", Lists.newArrayList("aliaPayHandler","weixinPayHandler","jingdongPayHandler","weixinPayHandler"));
+        payHandlerChain2.handlePay("first","jingdong", Lists.newArrayList("a","w","j","w"));
     }
 
     @Test

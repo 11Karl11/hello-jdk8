@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 /**
  * @author karl xie
  */
-@Service
+@Service("a")
 public class AliaPayHandler extends PayHandler {
 
     {
