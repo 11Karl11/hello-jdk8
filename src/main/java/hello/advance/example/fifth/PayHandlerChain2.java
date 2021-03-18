@@ -33,8 +33,7 @@ public class PayHandlerChain2 implements ApplicationContextAware, InitializingBe
             for (int i = 0; i < beanName.size(); i++) {
                 if (0 == i) {
                     newNode = new Node(beansOfTypeMap.get(beanName.get(i)));
-                }
-                if (i != beanName.size() && 0 != i) {
+                } else {
                     newNode.append(new Node(beansOfTypeMap.get(beanName.get(i))));
                 }
             }
