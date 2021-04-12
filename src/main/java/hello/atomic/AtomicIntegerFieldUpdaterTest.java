@@ -26,5 +26,8 @@ public class AtomicIntegerFieldUpdaterTest {
         ageAtoLong.compareAndSet(person,99999,0);
         System.out.println("id="+person.getId());
         System.out.println("age="+person.getAge());
+
+        System.out.println(mAtoLong.get(person));
+        System.out.println(ageAtoLong.get(person));
     }
 }
