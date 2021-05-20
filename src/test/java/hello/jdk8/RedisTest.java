@@ -5,9 +5,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import hello.jedis.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.connection.RedisConnection;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
@@ -23,6 +23,10 @@ public class RedisTest {
 
     @Autowired
     private RedisTemplate redisTemplate;
+
+    @Autowired
+    private RedisConnectionFactory redisConnectionFactory;
+
 
     @Test
     void test1() {
@@ -61,9 +65,22 @@ public class RedisTest {
 
         String json = new ObjectMapper().writeValueAsString(karl);
 
-        valueOperations.set("user",json);
+        valueOperations.set("user", json);
 
         System.out.println(valueOperations.get("user"));
+    }
+
+    @Test
+    void test3() {
+        InMemoryStoreAdapter inMemoryStoreAdapter = new InMemoryStoreAdapter(redisConnectionFactory);
+        ValueOperations valueOperations = inMemoryStoreAdapter.redisTemplate.opsForValue();
+        byte[] bytes = "kk".getBytes();
+        valueOperations.set("karl", bytes);
+
+        byte[] karl = (byte[]) valueOperations.get("karl");
+
+
+        System.out.println(new String(karl));
     }
 
 
