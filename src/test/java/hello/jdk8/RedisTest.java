@@ -8,10 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.data.redis.core.ListOperations;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.ValueOperations;
-import org.springframework.data.redis.core.ZSetOperations;
+import org.springframework.data.redis.core.*;
 
 import java.util.Set;
 
@@ -72,15 +69,18 @@ public class RedisTest {
 
     @Test
     void test3() {
-        InMemoryStoreAdapter inMemoryStoreAdapter = new InMemoryStoreAdapter(redisConnectionFactory);
+        RedisByteSerializer inMemoryStoreAdapter = new RedisByteSerializer(redisConnectionFactory);
         ValueOperations valueOperations = inMemoryStoreAdapter.redisTemplate.opsForValue();
-        byte[] bytes = "kk".getBytes();
-        valueOperations.set("karl", bytes);
+        byte[] bytes = "中国".getBytes();
+        // valueOperations.set("karl", bytes);
+        //
+        // byte[] karl = (byte[]) valueOperations.get("karl");
+        HashOperations hashOperations = inMemoryStoreAdapter.redisTemplate.opsForHash();
+        hashOperations.put("lc","ll",bytes);
+        byte[] o = (byte[])hashOperations.get("lc", "ll");
+        System.out.println(new String(o));
 
-        byte[] karl = (byte[]) valueOperations.get("karl");
-
-
-        System.out.println(new String(karl));
+        // System.out.println(new String(karl));
     }
 
 

@@ -3,6 +3,7 @@ package hello.jdk8;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.SerializationException;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author karl xie
  */
-public class InMemoryStoreAdapter {
+public class RedisByteSerializer {
     private final static byte[] EMPTY_ARRAY = new byte[0];
 
 
@@ -24,7 +25,7 @@ public class InMemoryStoreAdapter {
     private final static ObjectMapper objectMapper = new ObjectMapper();
 
     // 构造器
-    protected InMemoryStoreAdapter(RedisConnectionFactory redisConnectionFactory) {
+    protected RedisByteSerializer(RedisConnectionFactory redisConnectionFactory) {
         // 这里新建一个 RedisTemplate 给自己用
         this.redisTemplate = new RedisTemplate();
         redisTemplate.setConnectionFactory(redisConnectionFactory);
@@ -48,9 +49,12 @@ public class InMemoryStoreAdapter {
         redisTemplate.setDefaultSerializer(valueSerializer);
 
         redisTemplate.setKeySerializer(keySerializer);
-        redisTemplate.setHashKeySerializer(keySerializer);
+
+        // redisTemplate.setHashKeySerializer(keySerializer);
+        redisTemplate.setHashKeySerializer(new Jackson2JsonRedisSerializer<>(String.class));
 
         redisTemplate.setValueSerializer(valueSerializer);
+        redisTemplate.setHashValueSerializer(valueSerializer);
 
         // 记得调用 afterPropertiesSet()
         redisTemplate.afterPropertiesSet();
