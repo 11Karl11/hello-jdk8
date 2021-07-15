@@ -27,7 +27,7 @@ class HelloJdk8ApplicationTests {
         //数据源
         HikariConfig hikariConfig = new HikariConfig();
         hikariConfig.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        hikariConfig.setJdbcUrl("jdbc:mysql://192.168.0.104:3307/ruhr_cloud");
+        hikariConfig.setJdbcUrl("jdbc:mysql://192.168.0.105:3306/ruhr_cloud");
         hikariConfig.setUsername("ruhr_new");
         hikariConfig.setPassword("RUHR@007mysql");
         //设置可以获取tables remarks信息
@@ -42,7 +42,7 @@ class HelloJdk8ApplicationTests {
                 //打开目录
                 .openOutputDir(true)
                 //文件类型
-                .fileType(EngineFileType.MD)
+                .fileType(EngineFileType.WORD)
                 //生成模板实现
                 .produceType(EngineTemplateType.freemarker).build();
 
@@ -53,6 +53,7 @@ class HelloJdk8ApplicationTests {
         //忽略表前缀
         ArrayList<String> ignorePrefix = new ArrayList<>();
         ignorePrefix.add("test_");
+        ignorePrefix.add("t_lcdp_");
         //忽略表后缀
         ArrayList<String> ignoreSuffix = new ArrayList<>();
         ignoreSuffix.add("_test");
