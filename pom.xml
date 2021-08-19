@@ -19,6 +19,7 @@
     </properties>
 
     <dependencies>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -171,6 +172,36 @@
             <version>4.1.6.Final</version>
         </dependency>
 
+
+        <!-- 引入 CAT 相关依赖 -->
+        <dependency>
+            <groupId>com.dianping.cat</groupId>
+            <artifactId>cat-client</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.7</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>1.1.7</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-access</artifactId>
+            <version>1.1.7</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.1.7</version>
+        </dependency>
+
+
     </dependencies>
 
 
@@ -233,6 +264,32 @@
             </plugin>
 
         </plugins>
+<!--        <resources>-->
+<!--            <resource>-->
+<!--                <targetPath>${project.build.directory}/classes</targetPath>-->
+<!--                <directory>src/main/resources</directory>-->
+<!--                <filtering>true</filtering>-->
+<!--                <includes>-->
+<!--                    <include>**/*.properties</include>-->
+<!--                    <include>**/logback-spring.xml</include>-->
+<!--                </includes>-->
+<!--            </resource>-->
+<!--        </resources>-->
     </build>
+
+    <!-- 引入私服，因为 CAT 依赖并没有发到 Maven 中央仓库 -->
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Maven2 Central Repository</name>
+            <layout>default</layout>
+            <url>http://repo1.maven.org/maven2</url>
+        </repository>
+        <repository>
+            <id>unidal.releases</id>
+            <url>http://unidal.org/nexus/content/repositories/releases/</url>
+        </repository>
+    </repositories>
+
 
 </project>
