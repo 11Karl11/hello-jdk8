@@ -9,7 +9,7 @@ import hello.httpclient.core.DefaultBodyEncoder;
 import hello.httpclient.core.DefaultHttpClient;
 import hello.httpclient.model.HttpResult;
 import hello.jdk8.Person;
-import netscape.javascript.JSObject;
+
 import okhttp3.OkHttpClient;
 import org.springframework.boot.json.JacksonJsonParser;
 import org.springframework.web.bind.annotation.*;

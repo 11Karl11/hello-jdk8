@@ -4,7 +4,7 @@ import okhttp3.*;
 
 import java.io.IOException;
 
-import static sun.plugin.javascript.navig.JSType.URL;
+
 
 /**
  * OkHttpCLient:在Okhttp库中，OkHttpClient处于一个中心者的地位，很多功能都需要通过它来转发或者实现的。在创建的时候，
