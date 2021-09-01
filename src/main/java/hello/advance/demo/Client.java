@@ -12,6 +12,6 @@ public class Client {
         F.createCpu("INTEL").show();
 
 
-        
+
     }
 }
