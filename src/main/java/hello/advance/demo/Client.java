@@ -10,5 +10,7 @@ public class Client {
         Student.test(new Object());
         System.out.println(Student.a);
         F.createCpu("INTEL").show();
+
+        
     }
 }
