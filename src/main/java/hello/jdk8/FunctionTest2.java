@@ -1,6 +1,5 @@
 package hello.jdk8;
 
-import org.omg.PortableInterceptor.INACTIVE;
 
 import java.util.function.BiFunction;
 import java.util.function.Function;
