@@ -9,10 +9,12 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
+// @AllArgsConstructor
 public class Plate<T> {
 
     T items;
 
-
+    public Plate(T items) {
+        this.items = items;
+    }
 }

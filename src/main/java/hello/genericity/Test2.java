@@ -46,6 +46,7 @@ public class Test2 {
         Person4<Number> p8 = new Person4<>();
         p8.setName(111);
         p7.show4(p8);
-        System.out.println(p3.getName());
+        System.out.println(p7.getName());
+
     }
 }

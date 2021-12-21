@@ -1,11 +1,11 @@
 package hello.aviator;
 
+import com.google.common.collect.BoundType;
 import com.google.common.collect.Range;
 import com.googlecode.aviator.AviatorEvaluator;
 import com.googlecode.aviator.Expression;
 import com.googlecode.aviator.runtime.function.AbstractFunction;
 import com.googlecode.aviator.runtime.function.FunctionUtils;
-import com.googlecode.aviator.runtime.type.AviatorBigInt;
 import com.googlecode.aviator.runtime.type.AviatorBoolean;
 import com.googlecode.aviator.runtime.type.AviatorObject;
 
@@ -27,6 +27,9 @@ public class AviatorSimpleExample4 {
         env.put("dataPoint", 50);
         Boolean result = (Boolean) compiledExp.execute(env);
         System.out.println(result);
+
+        Range<Integer> range = Range.range(2, BoundType.OPEN, 4, BoundType.OPEN);
+        System.out.println(range.contains(3));
     }
 
     static class MinFunction extends AbstractFunction {

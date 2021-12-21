@@ -18,11 +18,12 @@ public class Test3 {
         // listB = new ArrayList<C>(); //编译不通过
         // listB = new ArrayList<D>(); //编译不通过
 
-        Object o = listB.get(0); //编译通过
         // listB.add(new A()); //编译不通过
         listB.add(new B()); //编译通过
         listB.add(new C()); //编译通过
         listB.add(new D()); //编译通过
+        Object o = listB.get(0); //编译通过
+        System.out.println(o);
 
 
     }
