@@ -225,6 +225,12 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Redisson Redis的分布式客户端 -->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>3.11.4</version>
+        </dependency>
 
 
     </dependencies>
