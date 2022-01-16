@@ -24,6 +24,7 @@ public class Test {
      *
      */
     public static void main(String[] args){
+
         // 初始化的是火鸡对象, 但是伪装成鸭子对象
         WildTurkey turkey = new WildTurkey();
         Duck duck = new TurkeyAdapter(turkey);
